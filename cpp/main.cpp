@@ -98,11 +98,11 @@ map<string,map<string,string>> processResults(vector<tuple<Configuration, map<ma
                                           "PC",
                                           "NT",
                                           "MR",
-                                          "FC",
-                                          "P(S)",
-                                          "P(S|H)",
-                                          "P(S|A)",
-                                          "P(S|D)"}};
+                                          "P(s)",
+                                          "Eg_max(p)",
+                                          "Eg(p|e0)",
+                                          "Eg(p|e1)",
+                                          "Eg(p|e2)"}};
     map<string,map<string,string>> termTranslation = {};
     for (const auto& outer_tuple : rrr) {
         const Configuration& config = std::get<0>(outer_tuple);
