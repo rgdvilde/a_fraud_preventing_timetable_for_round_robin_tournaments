@@ -1,0 +1,30 @@
+[{
+  "runs": 10,
+  "schedule": [
+    "./schedule.csv"
+  ],
+  "elo": [
+    "./elo.csv"
+  ],
+  "mapping": [
+    "./mapping.csv",
+    "exactHighestLast;./mapping.csv",
+    "exactHighestFirst;./mapping.csv"
+  ],
+    "selection": [
+  "./teamSelection_linear.csv",
+  "./teamSelection_2_groups.csv",
+  "./teamSelection_same.csv"
+  ],
+  "naming": [
+    "./naming.csv"
+  ],
+  "price": [
+    "inverseExponential",
+    "winnerTakesAll",
+    "linear",
+    "drop",
+    "topThree"
+  ],
+  "path": "./example_data/data/"
+}]

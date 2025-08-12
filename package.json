@@ -1,0 +1,34 @@
+{
+  "name": "a_fraud_preventinga_fraud_preventing_timetable_for_round_robin_tournaments",
+  "version": "1.0.0",
+  "main": "main.js",
+  "bin": {
+    "thesis-wrapper": "./main.js"
+  },
+  "license": "MIT",
+  "scripts": {
+    "generate": "cmake -S ./cpp -B ./cpp/cmake-build-debug",
+    "build": "yarn install && yarn make && yarn pkg",
+    "pkg": "yarn pkg:macos && yarn pkg:linux && yarn pkg:windows",
+    "pkg:macos": "pkg . --targets node18-macos-x64 --output dist/thesis-macos",
+    "pkg:linux": "pkg . --targets node18-linux-x64 --output dist/thesis-linux",
+    "pkg:windows": "pkg . --targets node18-win-x64 --output dist/thesis-win.exe",
+    "make": "yarn make:macos",
+    "make:macos": "/Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -S ./cpp -B ./cpp/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake --build ./cpp/cmake-build-debug",
+    "make:linux": "cmake -S ./cpp -B ./cpp/cmake-build-debug && cmake --build ./cpp/cmake-build-debug",
+    "make:windows": "cmake -S ./cpp -B ./cpp/cmake-build-debug && cmake --build ./cpp/cmake-build-debug"
+  },
+  "pkg": {
+    "assets": [
+      "./cpp/cmake-build-debug/thesis"
+    ],
+    "outputPath": "dist"
+  },
+  "devDependencies": {
+    "pkg": "^5.8.1"
+  },
+  "dependencies": {
+    "chart.js": "^4.5.0",
+    "chartjs-adapter-date-fns": "^3.0.0"
+  }
+}
