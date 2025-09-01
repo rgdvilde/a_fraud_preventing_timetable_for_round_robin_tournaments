@@ -107,6 +107,8 @@ function findOutputFile(args) {
 async function main() {
   try {
     const binaryPath = await getExecutablePath();
+    console.info('binaryPath', binaryPath);
+
     await runBinary(binaryPath);
     
     // Check if -v flag is present for visualization
